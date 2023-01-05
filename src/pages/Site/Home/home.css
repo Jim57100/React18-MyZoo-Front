@@ -1,0 +1,29 @@
+.polarZone {
+  position: relative;
+  height: 300px;
+}
+
+
+.polarBearImg {
+  position: absolute;
+  z-index: 0;
+  height: 400px;
+  width: auto;
+  left: 10em;
+  bottom: 30em;
+}
+
+.greenCircleBg {
+  height: 600px;
+  width: 600px;
+}
+
+.titleToMap {
+  color: #deaf00;
+}
+
+.btn:hover {
+  transform: translate(0, -6px);
+  box-shadow: 5px 5px 5px 0 rgba(222,175, 0.1);
+  transition: 0.5s;
+}

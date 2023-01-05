@@ -1,0 +1,37 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main {
+  width: 100%;
+  height: 90vh;
+  position: relative;
+}
+
+.left-leaf-clear {
+  height: 500px;
+}
+
+.left-leaf-vague {
+  height: 400px;
+}
+
+.right-leaf-clear {
+  height: 400px;
+}
+
+.right-leaf-vague {
+  height: 400px;
+}
+
+@media screen and (max-width:940px) {
+
+  .left-leaf-clear, 
+  .left-leaf-vague, 
+  .right-leaf-clear, 
+  .right-leaf-vague {
+    display: none;
+  }
+
+}
