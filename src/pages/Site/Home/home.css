@@ -1,21 +1,32 @@
-.polarZone {
+.polar_zone_container {
   position: relative;
-  height: 300px;
+  height: 500px;
+  max-width: 100%;
 }
 
+.polar_image_container {
+  position: relative;
+}
 
-.polarBearImg {
+.polar_img {
   position: absolute;
-  z-index: 0;
+  z-index: 1;
   height: 400px;
   width: auto;
-  left: 10em;
-  bottom: 30em;
+  top: 6em;
+  right: 3em;
 }
 
-.greenCircleBg {
+.green_circle_bg {
+  position: static;
   height: 600px;
   width: 600px;
+}
+
+.polar_zone_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .titleToMap {
@@ -26,4 +37,47 @@
   transform: translate(0, -6px);
   box-shadow: 5px 5px 5px 0 rgba(222,175, 0.1);
   transition: 0.5s;
+}
+
+.animalImg:hover {
+  transform: translate(0, -6px);
+  transition: 0.5s;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 350px) {
+
+  .polar_zone {
+    position: relative;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+
+.green_circle_bg {
+  height: 300px;
+  width: 300px;
+}
+
+.polar_img {
+  position: absolute;
+  z-index: 0;
+  height: 250px;
+  width: auto;
+  top: 2em; 
+  left: 5em;
+}
+
+.polar_zone_text {
+  margin-top: 1em;
+  text-align: center;
+}
+
+.titleToMap {
+  color: #deaf00;
+  text-align: center;
+}
+
 }

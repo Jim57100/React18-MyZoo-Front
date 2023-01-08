@@ -38,7 +38,7 @@ const NavBar = () => {
                 to="/"
                 onClick={closeMenu}
               >
-                Home
+                Accueil
               </NavLink>
             </li>
             <li className='nav-item'>

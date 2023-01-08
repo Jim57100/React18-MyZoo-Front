@@ -1,0 +1,36 @@
+.btn_ticket_container {
+  position: relative;
+  border: 0;
+  background-color: transparent;
+  color: white;
+  margin: 0;
+  padding: 0;
+}
+
+.btn_ticket_container:after {
+  content: " ";
+  height: 90px;
+  width: 220px;
+}
+
+.btn_brush_img {
+  height: 110px;
+  width: 200px;
+}
+
+.btn_ticket_text_container {
+  position: absolute;
+  top: 1.4em;
+  left: 0.8em;
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.btn_ticket_text {
+  margin-left: 5px;
+}
+
+.btn_ticket_container:hover {
+  transform: translateY(0.5);
+  transition-duration: 0.5s;
+}

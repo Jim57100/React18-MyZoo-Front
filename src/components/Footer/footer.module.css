@@ -1,0 +1,7 @@
+.p_footerLink {
+  color: rgb(152,172,182);
+}
+
+.p_footerLink:hover {
+  color: #deaf00;
+}

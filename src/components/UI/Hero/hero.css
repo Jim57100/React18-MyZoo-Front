@@ -9,29 +9,12 @@
   position: relative;
 }
 
-.left-leaf-clear {
-  height: 500px;
+.main_title {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.left-leaf-vague {
-  height: 400px;
-}
-
-.right-leaf-clear {
-  height: 400px;
-}
-
-.right-leaf-vague {
-  height: 400px;
-}
-
-@media screen and (max-width:940px) {
-
-  .left-leaf-clear, 
-  .left-leaf-vague, 
-  .right-leaf-clear, 
-  .right-leaf-vague {
-    display: none;
-  }
-
-}

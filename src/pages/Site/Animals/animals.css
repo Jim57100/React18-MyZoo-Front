@@ -1,0 +1,70 @@
+.a_hero {
+  height: 100vh;
+  width: 100%;
+  background-image: url('');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.a_h_overlay {
+  position: absolute;
+  background-color: rgba(29,72,92, 0.2);
+  height: 100%;
+  width: 100%;
+}
+
+.a_h_header {
+  height: 100px;
+}
+
+.a_h_parallaxes {
+  position: relative;
+  top: 0px;
+  right: 100px;
+}
+
+.a_h_flamings {
+  position: absolute;
+  z-index: 1;
+  height: 616px;
+  width: 616px;
+  top: 4em;
+  left: 7em;
+}
+
+.a_h_flying {
+  position: absolute;
+  z-index: 2;
+  height: 250px;
+  width: 246px;
+}
+
+.a_h_green_circle_bg {
+  position: static;
+  height: 750px;
+  width: 750px;
+}
+
+.a_h_content {
+  display: flex;
+  padding: 20px;
+  margin-left: 180px;
+  margin-right: 180px;
+  align-items: center;
+}
+
+.a_main {
+  background-color: #fff;
+}
+
+.a_search {
+  color: black;
+}
+
+.a_info_title {
+  color: #aa8c11;
+}
+
+.a_info_text {
+  color: black;
+}

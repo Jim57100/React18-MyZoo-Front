@@ -1,3 +1,9 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 :root {
   height: 100%;
   width: 100%;
@@ -10,8 +16,6 @@
 }
 
 html, body {
-  margin: 0;
-  padding: 0;
   min-width: 320px;
   min-height: 100vh;
   background-color: #183832;
@@ -37,7 +41,7 @@ h2 {
 h3 {
   font-size: 2.5em;
 }
-h1, h2, h3 {
+h1, h2, h3, h4, h5 {
   font-family: 'neuCha';
   color: white;
 }
@@ -47,6 +51,29 @@ p {
   font-size: 1.1em;
 }
 
+footer {
+  height: 350px;
+  background-color: #0d2c3b; 
+}
+
+
+@media screen and (max-width: 350px) {
+  
+  html, body {
+    margin: 0;
+    padding: 0;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: #183832;
+  }
+
+
+  
+  footer {
+    height: 650px;
+    background-color: #0d2c3b;
+  }
+} 
 /* button {
   border-radius: 8px;
   border: 1px solid transparent;
