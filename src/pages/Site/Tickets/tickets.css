@@ -1,0 +1,15 @@
+.card-pass {
+  height: 250px;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: red;
+}
+
+.card-header {
+  height: 150px;
+  width: 100%;
+  background: #fff;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}

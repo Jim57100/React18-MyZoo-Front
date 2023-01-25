@@ -11,6 +11,7 @@ const Footer = () => {
         <div className="f_column col-sm-12 col-md-3">
           <div className="f_title">
             <h4>Venir</h4>
+            
               <ul className='f_items'>
                 <li className='f_items'>MyZoo</li>
                 <li className='f_items'>3 rue somewhere</li>
@@ -20,6 +21,8 @@ const Footer = () => {
                 <li>Ouvert toute l'année</li>
                 <li>7j/7 à partir de 9h00</li>
                 <li>Y compris les jours fériés</li>
+                <li><NavLink to='/contact'>Nous contacter</NavLink> </li>
+                <li><NavLink to={import.meta.env.VITE_BACKEND_ADMIN} target="_blank" rel="noopener noreferrer">Intranet</NavLink> </li>
               </ul>
           </div>
         </div>
@@ -132,7 +135,7 @@ const Footer = () => {
             href="mailto:contact@myzoo.com" 
             className={['nav-link', 'p-0' ,'m-0', classes.p_footerLink ].join(" ")}
           >
-            Contact
+            Mail
           </a>
         </div>
       </div>

@@ -1,0 +1,79 @@
+.hero {
+  position: relative;
+  height: 100vh;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://france3-regions.francetvinfo.fr/image/QOPxtJJbIkarqEOkL59vWUK65q4/1200x900/regions/2020/10/20/5f8ee1624d1fa_maxbestof127318-5049574.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+h1 {
+  color: #fff;
+}
+
+h2, h3 {
+  color: black;
+}
+
+
+.hero > .overlay {
+  height : 100%;
+  width : 100%;
+  position: absolute;
+  background-color: rgba(27,54,66,  0.8)
+}
+
+.hero > .container-fluid {
+  position: absolute;
+  z-index: 10;
+}
+
+.h_headings {
+  margin: auto;
+  padding-left: 200px;
+  padding-right: 200px;
+}
+
+.animal_main_content {
+  padding-top: 100px;
+  background-color: #fff;
+}
+
+.animal_main_content p {
+  color: black;
+}
+
+.figure_picture_image {
+  width: 700px;
+  max-width: 770px;
+  position: absolute;
+  z-index: 10;
+  right: 200px;
+  top: -70px;
+}
+
+.a_fact_container {
+  height: 80px;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.a_fact, h4 {
+  font-size: 32px;
+  color: #af7145;
+}
+
+.a_description, .a_news_description {
+  font-size: 22px;
+  line-height: 1.5em;
+}
+
+.a_news_image {
+  width: 90%;
+}

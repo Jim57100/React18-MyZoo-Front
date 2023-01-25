@@ -1,3 +1,7 @@
+h1, h2, h3, p {
+  color: white;
+}
+
 .polar_zone_container {
   position: relative;
   height: 500px;
@@ -33,10 +37,16 @@
   color: #deaf00;
 }
 
+
 .btn:hover {
   transform: translate(0, -6px);
   box-shadow: 5px 5px 5px 0 rgba(222,175, 0.1);
-  transition: 0.5s;
+  transition: 0.7s;
+}
+
+.btn:not(:hover) {
+  transform: translate(0, 0);
+  transition: 0.7s;
 }
 
 .animalImg:hover {
@@ -45,6 +55,9 @@
   cursor: pointer;
 }
 
+/*
+MEDIA
+*/
 @media screen and (max-width: 350px) {
 
   .polar_zone {

@@ -12,43 +12,52 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: transparent;
   -webkit-text-size-adjust: 100%;
+  --goldenrod: #deaf00;
+  --colorSecondary: #aa8c11;
+  --green_theme: #183832;
 }
 
 html, body {
   min-width: 320px;
   min-height: 100vh;
-  background-color: #183832;
+  background-color: var(--green_theme);
+  text-rendering: optimizeLegibility;
 }
 
 a {
   font-weight: 500;
-  color: #deaf00;
+  color: var(--goldenrod);
   text-decoration: inherit;
 }
 a:hover {
-  color: #deaf00;
+  color: var(--goldenrod);
 }
 
 
 h1 {
   font-size: 4.3em;
-  line-height: 1.1;
+  line-height: 1;
 }
 h2 {
   font-size: 3.2em;
+  line-height: 1.2;
 }
 h3 {
   font-size: 2.5em;
+  line-height: 1.2;
 }
 h1, h2, h3, h4, h5 {
   font-family: 'neuCha';
-  color: white;
 }
 
 p {
-  color: white;
   font-size: 1.1em;
+}
+
+p > *:last-child {
+  margin-bottom: 0;
 }
 
 footer {

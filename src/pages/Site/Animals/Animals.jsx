@@ -1,47 +1,48 @@
 import React, { useEffect } from 'react';
+import axios from 'axios';
+import { NavLink } from 'react-router-dom';
 import greenCircle from '../../../assets/images/green_round_background.png'
 import flying from '../../../assets/images/flying.png'
 import flamings from '../../../assets/images/flamings.png'
 import CardAnimal from '../../../components/CardAnimal/CardAnimal'
-import axios from 'axios';
+import { IconContext } from "react-icons"
+import { GrSearch } from "react-icons/gr"
 import './animals.css';
-
 
 
 const Animals = () => {
 
-  //Form placeholder autocomplete  
-  function showLettersOf(arrayOfStrings) {
-    var stringIndex=0, letterIndex=0, str="";
-    return setInterval(() => {
-      str += arrayOfStrings[stringIndex].charAt(letterIndex++);
-      if (letterIndex >= arrayOfStrings[stringIndex].length){
-        letterIndex=0;
-        str="";
-        if (++stringIndex >= arrayOfStrings.length) stringIndex=0;
-      }
-    }, 1000);
-  }
-  
-
   //API Call
   const [animals, setAnimals] = React.useState([]);
 
-  useEffect(() => {
-    axios.get(`http://localhost/udemy/projets/serveurFSmyZoo/front/animals`)
+  const loadData = async () => {
+    await axios.get(`http://localhost/udemy/projets/serveurFSmyZoo/front/animals`)
     .then((response) => {
-      console.log(Object.values(response.data));
-      setAnimals(Object.values(response.data));
-    });
-  }, []);
+          console.log(Object.values(response.data));
+          setAnimals(Object.values(response.data));
+        }); 
+  }
+
+  useEffect(() => {
+    loadData();
+  }, [])
 
 
-  const display = animals && animals.map(
-    animal => {
-      return animal.name
-    }
-  );
-  console.log(display);
+  const placeholderText = ['lion', 'gorille', 'koala', 'hippopotame', 'éléphant'];
+  const [index, setIndex] = React.useState(0);
+  //Timer
+  // useEffect(() => {
+  //   const timer = () => {
+  //     setIndex(prevIndex => {
+  //       if(prevIndex === placeholderText.length -1 ){
+  //         return 0;
+  //       }
+  //       return prevIndex + 1;  
+  //     })
+  //   }
+  //   setInterval(timer, 2000);
+  //   return () => { clearInterval(timer); }  //cleanup the effect
+  // }, []);
 
   return (
     <>
@@ -66,19 +67,27 @@ const Animals = () => {
       </div>
     </section>
     <section className="a_main">
+    
       <div className="container">
-        <div className="row a_m_content mt-5 mb-5">
+        <div className="row a_m_content mt-5 mb-5 pt-5 pb-5">
           <div className="col-sm-12 col-md-7 a_search">
             <form>
               <label>
-                <h3>Vous recherchez un animal ?</h3>
-                <input 
-                  type="text" 
-                  name="name" 
-                  placeholder={ showLettersOf(['lion', 'gorille']) }
-                />
+                <p style={{color: 'black', fontWeight: 'bold', fontSize: '25px'}}>Vous recherchez un animal ?</p>
+                <div className="searchBox_container">
+                  <input 
+                    type="text" 
+                    name="name" 
+                    placeholder={placeholderText[index]}
+                    id='searchBox'
+                  />
+                  <IconContext.Provider value={{ className: 'react_icons' }}>
+                    <button type="submit" className='btnSubmit'>
+                      <GrSearch />
+                    </button>
+                  </IconContext.Provider>
+                </div>
               </label>
-              <input type="submit" value="Submit"/>
             </form>
           </div>
           <div className="col-sm-12 col-md-5 a_info">
@@ -89,19 +98,22 @@ const Animals = () => {
             <span className="a_info_text mt-3">Découvrez ici quelques unes des espèces emblématiques.</span>
           </div>
         </div>
-        <div className="container cards-container">
+        <div className="container a_cards-container">
           <div className="row a_display_data no-gutters">
-            
             {
               animals.map((animal) => {
                 return (
-                  <div className="col-12 col-md-6 col-xl-4" key={animal.id}>
-                    <CardAnimal {...animal} />
+                  <div 
+                    className="col-12 col-md-6 col-xl-4 a_card" 
+                    key={animal.id}
+                  >
+                    <NavLink to={`./${animal.id}`}>
+                      <CardAnimal {...animal}/>
+                    </NavLink>
                   </div>
                 )
               })
             }
-
           </div>
         </div>
       </div>

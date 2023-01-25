@@ -10,7 +10,7 @@ const BtnTickets = () => {
     <NavLink to="/tickets">
       <button className="btn_ticket_container">
         <img src={brush} alt="brush" className='btn_brush_img'/>
-        <div class="btn_ticket_text_container">
+        <div className="btn_ticket_text_container">
           <GiTicket size={30} />
           <span className="btn_ticket_text">Billetterie</span>
         </div>

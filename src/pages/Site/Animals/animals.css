@@ -9,7 +9,7 @@
 .a_h_overlay {
   position: absolute;
   background-color: rgba(29,72,92, 0.2);
-  height: 100%;
+  height: 92vh;
   width: 100%;
 }
 
@@ -41,8 +41,8 @@
 
 .a_h_green_circle_bg {
   position: static;
-  height: 750px;
-  width: 750px;
+  height: 700px;
+  width: 700px;
 }
 
 .a_h_content {
@@ -67,4 +67,47 @@
 
 .a_info_text {
   color: black;
+}
+
+.searchBox_container {
+  position: relative;
+}
+
+#searchBox {
+  border: none; 
+  border-radius: 25px; 
+  height: 50px; 
+  width: 300px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  padding-left: 20px;
+  font-size: 17px;
+}
+
+.btnSubmit {
+  height: 50px;
+  width: 60px; 
+  border-radius: 25px; 
+  background-color: #0d2c3b;
+  position: absolute;
+  right: 0;
+}
+
+.react_icons {
+  color: #fff;
+  font-size: 1.5em;
+  fill: #aa8c11;
+}
+
+.btn_animal {
+  border: inherit;
+  background: inherit;
+}
+
+.btn_animal:hover {
+  transform: translate(0, -10px);
+  transition: 0.7s;
+}
+
+h1, h2, h3 {
+  color: white;
 }
