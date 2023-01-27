@@ -1,5 +1,5 @@
 /* dependencies */
-import React, { useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Formik, Form, Field } from 'formik';
 import * as Yup from 'yup';
 /* css */
@@ -51,51 +51,39 @@ const ContactForm = () => {
           newsletter: false,
         }}
         validationSchema={formSchema}
-        onSubmit={async (values, actions) => {
-        
-         setTimeout(() => {
-           console.log(JSON.stringify(values, null, 2));
-           actions.setSubmitting(false);
-         }, 400);
+        onSubmit={(values, actions) => {
 
-
+          const message = {
+          gender: values.gender,
+          firstName: values.firstName,
+          lastName: values.lastName,
+          email: values.email,
+          message: values.message,
+          newsletter: values.newsletter
+          }
           
-          (async (values) => {
-          
-            const message = {
-            gender: values.firstName,
-            firstname: values.firstName,
-            lastName: values.lastName,
-            email: values.email,
-            message: values.message
-            }
+          const url = import.meta.env.VITE_URL_BACK_CONTACT;
+          axios.post(url,message)
+          .then(response=> {
+              setModal(true);
+              console.log('response ', response)
+          })
+          .catch(error => {
+              console.log(error)
+              setErrorModal(true);
+          })
 
-            console.log('message ', message);
-              const axiosConfig = {
-                headers: {
-                  'Access-Control-Allow-Origin': '*',
-                  'Access-Control-Allow-Methods': 'POST, GET',
-                  'Access-Control-Allow-Headers': 'Accept, Content-Type, Content-Length',
-                  'Content-Type': 'application/json'
-                }
-              };
-              const url = import.meta.env.VITE_URL_BACK_CONTACT;
-              await axios.post(url,message, axiosConfig)
-              .then(response=> {
-                  console.log(response)
-                  setModal(true);
-              })
-              .catch(error => {
-                  console.log(error)
-                  setErrorModal(true);
-              })
-          });
+          setTimeout(() => {
+            // console.log(JSON.stringify(message, null, 2));
+            actions.setSubmitting(false);
+          }, 400);
+          actions.resetForm();
         }}
       >
        {(props) => (
-        <Form onSubmit={() => componentProps}>
-        { errorModal && <div class="alert alert-danger" role="alert">Erreur d'envoi du message</div> }
-        { modal && <div class="alert alert-success" role="alert">Merci ! nous avons bien reçu votre message.</div> }
+        <Form>
+        { errorModal && <div className="alert alert-danger" role="alert">Erreur d'envoi du message</div> }
+        { modal && <div className="alert alert-success" role="alert">Merci ! nous avons bien reçu votre message.</div> }
 
           <div className='mt-3 mb-3'>  
             <label htmlFor='email' className='form-label'>E-mail*</label>
@@ -128,8 +116,9 @@ const ContactForm = () => {
               name='gender'
             >
               <option defaultvalues=''>Sélectionnez...</option>
-              <option values='1'>Madame</option>
-              <option values='2'>Monsieur</option>
+              <option values='Madame'>Madame</option>
+              <option values='Monsieur'>Monsieur</option>
+              <option values='Undefined'>Non défini</option>
             </Field>
             {
               props.errors.gender && props.touched.gender 

@@ -16,7 +16,8 @@ const Animals = () => {
   const [animals, setAnimals] = React.useState([]);
 
   const loadData = async () => {
-    await axios.get(`http://localhost/udemy/projets/serveurFSmyZoo/front/animals`)
+    const url = import.meta.env.VITE_BACKEND_GET_ANIMALS;
+    await axios.get(url)
     .then((response) => {
           console.log(Object.values(response.data));
           setAnimals(Object.values(response.data));

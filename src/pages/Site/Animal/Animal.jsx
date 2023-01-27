@@ -35,20 +35,16 @@ const Animal = () => {
       case 1 : return '../../../assets/images/threat_pills/lc.png'; break;
       case 2 : return '../../../assets/images/threat_pills/vu.png'; break;
       case 3 : return '../../../assets/images/threat_pills/cr.png'; break;
-      case 4 : return '../../../assets/images/threat_pills/cr.png'
-      ; break;
+      case 4 : return '../../../assets/images/threat_pills/cr.png'; break;
       default: return ""; break;
     }
   }
-
-
 
   return (
     
       animal.map((data) => {
         const nickname = (data.name).split(' ');
 
-        
         return (
           <div key={data.id}>
             <section className='hero'>
